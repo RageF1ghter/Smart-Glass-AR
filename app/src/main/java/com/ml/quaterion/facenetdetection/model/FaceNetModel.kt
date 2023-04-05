@@ -1,9 +1,9 @@
-package com.ml.quaterion.smartGlassAR.model
+package com.ml.quaterion.facenetdetection.model
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.util.Log
-import com.ml.quaterion.smartGlassAR.Logger
+import com.ml.quaterion.facenetdetection.Logger
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.Interpreter
 import org.tensorflow.lite.gpu.CompatibilityList

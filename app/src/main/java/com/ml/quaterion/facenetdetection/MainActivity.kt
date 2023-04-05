@@ -1,4 +1,4 @@
-package com.ml.quaterion.smartGlassAR
+package com.ml.quaterion.facenetdetection
 
 import android.Manifest
 import android.content.Context
@@ -27,9 +27,9 @@ import androidx.lifecycle.LifecycleOwner
 import com.google.common.util.concurrent.ListenableFuture
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
-import com.ml.quaterion.smartGlassAR.databinding.ActivityMainBinding
-import com.ml.quaterion.smartGlassAR.model.FaceNetModel
-import com.ml.quaterion.smartGlassAR.model.Models
+import com.ml.quaterion.facenetdetection.databinding.ActivityMainBinding
+import com.ml.quaterion.facenetdetection.model.FaceNetModel
+import com.ml.quaterion.facenetdetection.model.Models
 import kotlinx.coroutines.*
 import kotlinx.coroutines.tasks.await
 import java.io.*
