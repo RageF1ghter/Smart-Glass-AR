@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "78438703824",
+    "project_id": "smart-glass-ar",
+    "storage_bucket": "smart-glass-ar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:78438703824:android:05b587029978347fff34d5",
+        "android_client_info": {
+          "package_name": "com.ml.quaterion.facenetdetection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "78438703824-3jpbn6041os8tjlqji7d2uh4pqncl0uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeqUj1UOZx3Gr7j1Az5rDMSv5pntU3Eik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "78438703824-3jpbn6041os8tjlqji7d2uh4pqncl0uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
