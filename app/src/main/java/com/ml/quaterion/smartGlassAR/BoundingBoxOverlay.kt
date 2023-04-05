@@ -12,10 +12,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ml.quaterion.facenetdetection
+package com.ml.quaterion.smartGlassAR
 
 import android.content.Context
-import android.content.res.Configuration
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Matrix
@@ -24,7 +23,6 @@ import android.util.AttributeSet
 import android.view.SurfaceHolder
 import android.view.SurfaceView
 import androidx.core.graphics.toRectF
-import com.google.mlkit.vision.face.FaceLandmark
 
 // Defines an overlay on which the boxes and text will be drawn.
 class BoundingBoxOverlay( context: Context , attributeSet: AttributeSet )

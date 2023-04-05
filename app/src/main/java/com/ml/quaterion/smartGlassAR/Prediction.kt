@@ -12,9 +12,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.ml.quaterion.facenetdetection
+package com.ml.quaterion.smartGlassAR
 
 import android.graphics.Rect
-import com.google.mlkit.vision.face.FaceLandmark
 
 data class Prediction(  var bbox : Rect, var label : String)

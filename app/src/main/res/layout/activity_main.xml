@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.ml.quaterion.facenetdetection.BoundingBoxOverlay
+    <com.ml.quaterion.smartGlassAR.BoundingBoxOverlay
         android:id="@+id/bbox_overlay"
         android:layout_width="0dp"
         android:layout_height="0dp"

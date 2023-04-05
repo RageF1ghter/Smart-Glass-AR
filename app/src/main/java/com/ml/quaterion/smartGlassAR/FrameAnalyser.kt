@@ -1,4 +1,4 @@
-package com.ml.quaterion.facenetdetection
+package com.ml.quaterion.smartGlassAR
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,7 +12,7 @@ import com.google.mlkit.vision.common.InputImage
 import com.google.mlkit.vision.face.Face
 import com.google.mlkit.vision.face.FaceDetection
 import com.google.mlkit.vision.face.FaceDetectorOptions
-import com.ml.quaterion.facenetdetection.model.FaceNetModel
+import com.ml.quaterion.smartGlassAR.model.FaceNetModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

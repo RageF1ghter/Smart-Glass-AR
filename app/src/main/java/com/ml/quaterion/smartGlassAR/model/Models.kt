@@ -1,4 +1,4 @@
-package com.ml.quaterion.facenetdetection.model
+package com.ml.quaterion.smartGlassAR.model
 
 class Models {
 
