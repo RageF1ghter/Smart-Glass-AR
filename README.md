@@ -14,7 +14,7 @@ How we realize:
 ![procedure image](image/procedure.png)
 6. Once the face is recognized belonging to someone, fetch his/her detailed information from firebase database
 7. Output the finally result.
-![output image](image/final output.png)
+![output image](image/output.png)
 
 
   
