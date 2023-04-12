@@ -63,8 +63,6 @@ class FrameAnalyser( private var context: Context ,
         }
         else {
             isProcessing = true
-//            Logger.log("image resolution: ${image.width}x${image.height}")
-//            Logger.log("image rotation: ${image.imageInfo.rotationDegrees}")
             // Rotated bitmap for the FaceNet model
             val frameBitmap = BitmapUtils.imageToBitmap( image.image!! ,  image.imageInfo.rotationDegrees )
 
@@ -96,16 +94,21 @@ class FrameAnalyser( private var context: Context ,
             var max = 0     // max face size
             var maxIndex = -1   //max face index in the face array
 
+            //find the biggest face
             for (face in faces) {
                 try {
-                    // Crop the frame and convert to ByteBuffer
-                    val croppedBitmap = BitmapUtils.cropRectFromBitmap( cameraFrameBitmap , face.boundingBox )
-                    var size = croppedBitmap.height * croppedBitmap.width
-                    if(size > max){
-                        max = size
-                        maxIndex = faces.indexOf(face)
+                    // set the middle 1/3 of screen as the detection area
+                    if(face.boundingBox.centerX() >= 640 && face.boundingBox.centerX() <= 1280){
+                        // Crop the frame and convert to ByteBuffer
+                        val croppedBitmap = BitmapUtils.cropRectFromBitmap( cameraFrameBitmap , face.boundingBox )
+                        var size = croppedBitmap.height * croppedBitmap.width
+                        if(size > max){
+                            max = size
+                            maxIndex = faces.indexOf(face)
+                        }
+                        sizeList.add(size)
                     }
-                    sizeList.add(size)
+
                 }
                 catch ( e : Exception ) {
                     // If any exception occurs with this box and continue with the next boxes.
@@ -205,7 +208,7 @@ class FrameAnalyser( private var context: Context ,
                             }
 
                     }
-                    //enable multi face recognition (abandoned since poor effect on the glasses)
+                    //enable multi face recognition (abandoned since poor display effect on the glasses)
 //                    else{
 //                        predictions.add(
 //                            Prediction(

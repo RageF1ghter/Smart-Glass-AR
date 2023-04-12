@@ -126,6 +126,41 @@ class MainActivity : AppCompatActivity() {
         isSerializedDataStored = sharedPreferences.getBoolean( SHARED_PREF_IS_DATA_STORED_KEY , false )
         if ( !isSerializedDataStored ) {
             Logger.log( "No serialized data was found. Select the images directory.")
+
+            //ask user to download the data for the first time
+            val alertDialog = AlertDialog.Builder( this ).apply {
+                setTitle( "Serialized Data")
+                setMessage( "Download data from firebase or scan local storage?" )
+                setCancelable( false )
+                setNegativeButton( "DOWNLOAD") { dialog, which ->
+                    dialog.dismiss()
+
+                    //download images from firebase storage
+                    GlobalScope.launch(Dispatchers.IO) {
+                        val storage = Firebase.storage
+                        val listRef = storage.reference.child("faces")
+                        val subfolders = listRef.listAll().await()
+                        subfolders.prefixes.forEach{subfolder ->
+                            Logger.log(subfolder.name)
+                            val subListRef = storage.reference.child("faces/${subfolder.name}")
+                            val images = subListRef.listAll().await()
+                            images.items.forEach{ image->
+
+                                val ONE_MEGABYTE: Long = 1024 * 1024
+                                val imageByte = image.getBytes(ONE_MEGABYTE).await()
+                                val imageBitmap = BitmapFactory.decodeByteArray(imageByte, 0, imageByte.size)
+                                imagesData.add(Pair(subfolder.name, imageBitmap))
+                            }
+                        }
+                        Logger.log("face load completed")
+                        fileReader.run( imagesData, fileReaderCallback )
+                    }
+
+                }
+                create()
+            }
+            alertDialog.show()
+
         }
         else {
             val alertDialog = AlertDialog.Builder( this ).apply {
