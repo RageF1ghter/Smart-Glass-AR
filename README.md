@@ -9,6 +9,7 @@ How we realize:
 3. Using MLkit to do face detection and crop them from captured video stream frames.
 4. Converting cropped face images from a bitmap to ByteBuffer and feeding the it to the FaceNet model.
 5. Comparing stored embedding with captured face then pick result with the best score.
+![procedure image](image/procedure.png)
 
 
   
