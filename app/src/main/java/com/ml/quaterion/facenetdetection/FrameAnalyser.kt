@@ -86,6 +86,7 @@ class FrameAnalyser( private var context: Context ,
     }
 
 
+
     private suspend fun runModel( faces : List<Face> , cameraFrameBitmap : Bitmap ){
         withContext( Dispatchers.Default ) {
             val predictions = ArrayList<Prediction>()
@@ -154,7 +155,7 @@ class FrameAnalyser( private var context: Context ,
 
                     // Compute the average of all scores norms for each cluster.
                     val avgScores = nameScoreHashmap.values.map{ scores -> scores.toFloatArray().average() }
-//                    Logger.log( "Average score for each user : $nameScoreHashmap" )
+                    Logger.log( "Average score for each user : $nameScoreHashmap" )
 
                     val names = nameScoreHashmap.keys.toTypedArray()
                     nameScoreHashmap.clear()

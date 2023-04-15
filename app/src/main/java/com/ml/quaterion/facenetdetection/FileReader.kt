@@ -75,6 +75,7 @@ class FileReader( private var faceNetModel: FaceNetModel ) {
                         }
                     }
                     else {
+                        // Logger.log(name + " failed")
                         // The image contains no faces, proceed to the next one.
                         numImagesWithNoFaces += 1
                         if (imageCounter + 1 != numImages) {

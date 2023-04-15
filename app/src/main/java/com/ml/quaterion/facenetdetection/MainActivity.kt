@@ -145,7 +145,6 @@ class MainActivity : AppCompatActivity() {
                             val subListRef = storage.reference.child("faces/${subfolder.name}")
                             val images = subListRef.listAll().await()
                             images.items.forEach{ image->
-
                                 val ONE_MEGABYTE: Long = 1024 * 1024
                                 val imageByte = image.getBytes(ONE_MEGABYTE).await()
                                 val imageBitmap = BitmapFactory.decodeByteArray(imageByte, 0, imageByte.size)
@@ -181,8 +180,8 @@ class MainActivity : AppCompatActivity() {
                             val images = subListRef.listAll().await()
                             images.items.forEach{ image->
 
-                                val ONE_MEGABYTE: Long = 1024 * 1024
-                                val imageByte = image.getBytes(ONE_MEGABYTE).await()
+                                val MEGABYTE: Long = 1024 * 1024 * 5   //define the max size of image per fetching
+                                val imageByte = image.getBytes(MEGABYTE).await()
                                 val imageBitmap = BitmapFactory.decodeByteArray(imageByte, 0, imageByte.size)
                                 imagesData.add(Pair(subfolder.name, imageBitmap))
                             }
