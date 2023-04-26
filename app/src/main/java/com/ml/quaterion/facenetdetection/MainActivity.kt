@@ -180,7 +180,7 @@ class MainActivity : AppCompatActivity() {
                             val images = subListRef.listAll().await()
                             images.items.forEach{ image->
 
-                                val MEGABYTE: Long = 1024 * 1024 * 5   //define the max size of image per fetching
+                                val MEGABYTE: Long = 1024 * 1024 * 10   //define the max size of image per fetching
                                 val imageByte = image.getBytes(MEGABYTE).await()
                                 val imageBitmap = BitmapFactory.decodeByteArray(imageByte, 0, imageByte.size)
                                 imagesData.add(Pair(subfolder.name, imageBitmap))

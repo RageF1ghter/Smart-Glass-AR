@@ -155,7 +155,7 @@ class FrameAnalyser( private var context: Context ,
 
                     // Compute the average of all scores norms for each cluster.
                     val avgScores = nameScoreHashmap.values.map{ scores -> scores.toFloatArray().average() }
-                    // Logger.log( "Average score for each user : $nameScoreHashmap" )
+//                     Logger.log( "Average score for each user : $nameScoreHashmap" )
 
                     val names = nameScoreHashmap.keys.toTypedArray()
                     nameScoreHashmap.clear()
@@ -193,7 +193,7 @@ class FrameAnalyser( private var context: Context ,
                         docRef.get()
                             .addOnSuccessListener { document ->
                                 if (document != null) {
-                                    val gpa = document.getString("gpa")
+                                    val gpa = document.getString("GPA")
                                     val strength = document.getString("strength")
                                     val weakness = document.getString("weakness")
                                     Logger.infoLog("${bestScoreUserName}'s GPA: $gpa\n" +
