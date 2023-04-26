@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>image upload</title>
+</head>
+
+<body>
+    <label for="text_input">Please enter your name:</label>
+    <input type="text" id="text_input">
+    <br>
+    <label for="image_input">Please select your picture:</label>
+    <input type="file" name="image_input" id="image_input" accept="image/png, image/jpg, image/jpeg" multiple>
+    <br>
+    <label for="gpa_input">GPA: </label>
+    <input type="text" name="gpa_input" id="gpa_input">
+    <br>
+    <label for="strength">What's your strength</label>
+    <input type="text" name="strength_input" id="strength_input">
+    <br>
+    <label for="weakness">What's your weakness</label>
+    <input type="text" name="weakness_input" id="weakness_input">
+    <br>
+    <button type="button" id="upload">upload</button>
+    <br>
+    <label for="" id="complete"></label>
+    <br>
+    <progress id="progressBar" value="0" max="100"></progress>
+    <br>
+
+    
+    <script type="module" src="firebase.js"></script>
+</body>
+
+
+
+
+</html>
