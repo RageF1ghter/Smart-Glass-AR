@@ -27,7 +27,8 @@ The cloud storage is also made up with 2 parts, the firebase storage is charged 
 There are 2 things need to be pay attention. One thing is students names can be duplicate, eventhough we can use random generate index instead of their names, it was too late for me to change the code, so continuous developers please change this, thank you! The other thing is due to the data transfering limitation, uploaded images should be smaller than 10MB, this can be modified by change the value of 147 line in MainActivity.kt. A greater threshold means it will take longer time during fetching process.
 
 The application:
-The application can be deployed on most android devices which equipped with cameras. 
+The application can be deployed on most android devices which equipped with cameras. The process is on the above "How we realize" part. Since the face data and personal information data are stored on Firebase, remember keep the glasses connectted to the internet. Eventhough the face recognition part doesn't need internet connection, to achieve fully experience internet connection is also needed. 
+
 
 
 
